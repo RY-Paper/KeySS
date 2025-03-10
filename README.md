@@ -1,6 +1,6 @@
 # All That Glitters Is Not Gold: Key-Secured 3D Secrets within 3D Gaussian Splatting
 Yan Ren, Shilin Lu, Adams Wai-Kin Kong<br>
-| [Webpage](https://repo-sam.inria.fr/fungraph/3d-gaussian-splatting/) | [Full Paper](https://repo-sam.inria.fr/fungraph/3d-gaussian-splatting/3d_gaussian_splatting_high.pdf)|[Pre-trained Models (14 GB)](https://repo-sam.inria.fr/fungraph/3d-gaussian-splatting/datasets/pretrained/models.zip) |<br>
+| [Webpage](https://repo-sam.inria.fr/fungraph/3d-gaussian-splatting/) | [Full Paper](https://repo-sam.inria.fr/fungraph/3d-gaussian-splatting/3d_gaussian_splatting_high.pdf)|[Pre-trained Models (2.4 GB)](https://drive.google.com/file/d/1iZY-sOrWToP5GDfUISVcccJDkHipwrDO/view?usp=drive_link) |<br>
 ![Teaser image](assets/flowtry.png)
 
 This repository contains the official authors implementation associated with the paper "All That Glitters Is Not Gold: Key-Secured 3D Secrets within 3D Gaussian Splatting". 
