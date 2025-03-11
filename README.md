@@ -2,7 +2,7 @@
 
 [![arXiv](https://img.shields.io/badge/arXiv-KeySS-green.svg?style=plastic)](https://arxiv.org/abs/2503.07191) [![HuggingFace](https://img.shields.io/badge/HuggingFace-PretrainedMipnerf360Models-blue.svg?style=plastic)](https://huggingface.co/jojojohn/mipnerf360_pretrained) <br>
 
-This repository contains the official authors implementation associated with the paper ["All That Glitters Is Not Gold: Key-Secured 3D Secrets within 3D Gaussian Splatting."](https://arxiv.org/abs/2410.18775)
+This repository contains the official authors implementation associated with the paper ["All That Glitters Is Not Gold: Key-Secured 3D Secrets within 3D Gaussian Splatting."](https://arxiv.org/abs/2503.07191)
 
 > **All That Glitters Is Not Gold: Key-Secured 3D Secrets within 3D Gaussian Splatting**<br>
 > Yan Ren, Shilin Lu, Adams Wai-Kin Kong <br>
