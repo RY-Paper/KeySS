@@ -7,41 +7,42 @@
 # all_path is the point cloud of the secret
 # hide_path is the point cloud of the cover
 # source_path_secret is the path of the secret initial info
-#fealist can be selected from (opacity,rotation,xyz,scale,sh)
+# fealist can be selected from (opacity,rotation,xyz,scale,sh)
+# the cover_list and secret_list can be written as follows:
+# e.g. cover_list=('counter' 'kitchen')
+# e.g. secret_list=('bicycle' 'bonsai')
 cover_list=('bonsai')
 secret_list=('counter')
-for j in {1}; do
-    for i in "${!cover_list[@]}"; do
-        cover_item="${cover_list[$i]}"
-        secret_item="${secret_list[$i]}"
-        CUDA_VISIBLE_DEVICES=0 python train2hide_prompt_random_fast16.py -s ./data/mipnerf360/$cover_item \
-        --port 7988 --eval \
-        --fealist opacity,rotation,xyz,scale \
-        --prompt "NobodysGonnaKnow" \
-        --save_path output/single_secret/$cover_item \
-        --all_path output/mipnerf360/$secret_item/point_cloud/iteration_30000/point_cloud.ply \
-        --source_path_secret data/mipnerf360/$secret_item \
-        --hide_path output/mipnerf360/$cover_item/point_cloud/iteration_30000/point_cloud.ply
-   done
+for i in "${!cover_list[@]}"; do
+    cover_item="${cover_list[$i]}"
+    secret_item="${secret_list[$i]}"
+    CUDA_VISIBLE_DEVICES=0 python train2hide_prompt_random_fast16.py -s ./data/mipnerf360/$cover_item \
+    --port 7988 --eval \
+    --fealist opacity,rotation,xyz,scale \
+    --prompt "NobodysGonnaKnow" \
+    --save_path output/single_secret/$cover_item \
+    --all_path output/mipnerf360/$secret_item/point_cloud/iteration_30000/point_cloud.ply \
+    --source_path_secret data/mipnerf360/$secret_item \
+    --hide_path output/mipnerf360/$cover_item/point_cloud/iteration_30000/point_cloud.ply
 done
 
-for single secret hiding with sh feature, due to gpu limit, please run the following command:
+
+# for single secret hiding with sh feature, due to gpu limit, please run the following command:
 cover_list=('bonsai')
 secret_list=('counter')
-for j in {1}; do
-    for i in "${!cover_list[@]}"; do
-        cover_item="${cover_list[$i]}"
-        secret_item="${secret_list[$i]}"
-        CUDA_VISIBLE_DEVICES=0 python train2hide_prompt_random_fast16_sh.py -s ./data/mipnerf360/$cover_item \
-        --port 7988 --eval \
-        --fealist sh,opacity,rotation,xyz,scale \
-        --prompt "NobodysGonnaKnow" \
-        --save_path output/single_secret/$cover_item \
-        --all_path output/mipnerf360/$secret_item/point_cloud/iteration_30000/point_cloud.ply \
-        --source_path_secret data/mipnerf360/$secret_item \
-        --hide_path output/mipnerf360/$cover_item/point_cloud/iteration_30000/point_cloud.ply
-    done
+for i in "${!cover_list[@]}"; do
+    cover_item="${cover_list[$i]}"
+    secret_item="${secret_list[$i]}"
+    CUDA_VISIBLE_DEVICES=0 python train2hide_prompt_random_fast16_sh.py -s ./data/mipnerf360/$cover_item \
+    --port 7988 --eval \
+    --fealist sh,opacity,rotation,xyz,scale \
+    --prompt "NobodysGonnaKnow" \
+    --save_path output/single_secret/$cover_item \
+    --all_path output/mipnerf360/$secret_item/point_cloud/iteration_30000/point_cloud.ply \
+    --source_path_secret data/mipnerf360/$secret_item \
+    --hide_path output/mipnerf360/$cover_item/point_cloud/iteration_30000/point_cloud.ply
 done
+
 
 
 
