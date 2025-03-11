@@ -1,6 +1,6 @@
 # All That Glitters Is Not Gold: Key-Secured 3D Secrets within 3D Gaussian Splatting
 Yan Ren, Shilin Lu, Adams Wai-Kin Kong<br>
-| [Full Paper](https://repo-sam.inria.fr/fungraph/3d-gaussian-splatting/3d_gaussian_splatting_high.pdf)|[Pre-trained Models (2.4 GB)](https://drive.google.com/file/d/1iZY-sOrWToP5GDfUISVcccJDkHipwrDO/view?usp=drive_link) |<br>
+[![arXiv](https://img.shields.io/badge/arXiv-KeySS-green.svg?style=plastic)](https://arxiv.org/abs/2503.07191)<br>
 ![Teaser image](assets/flowtry.png)
 
 This repository contains the official authors implementation associated with the paper "All That Glitters Is Not Gold: Key-Secured 3D Secrets within 3D Gaussian Splatting". 
@@ -16,14 +16,23 @@ Extensive experiments demonstrate that our method achieves state-of-the-art perf
 
 First, follow the setup instructions for 3D Gaussian Splatting at https://repo-sam.inria.fr/fungraph/3d-gaussian-splatting/ to install the base dependencies and the datasets.
 
-Then, install the additional dependencies for KeySS by running:
+Then, install KeySS by running the following commands:
 ```shell
-conda env create --file environment.yml
+git clone https://github.com/RY-Paper/KeySS.git 
+conda create -n keyss python=3.8 -y
 conda activate keyss
+conda install pytorch==2.1.2 torchvision==0.16.2 torchaudio==2.1.2 pytorch-cuda=11.8 -c pytorch -c nvidia
+
+pip install plyfile
+pip install tqdm scipy wandb opencv-python scikit-learn lpips
+pip install submodules/diff-gaussian-rasterization
+pip install submodules/simple-knn
+pip install transformers
 ```
 
 ### Dataset and Output
 The dataset needed consists of 9 scenes from MipNeRF360 dataset ([available here](https://jonbarron.info/mipnerf360/)) and 1 scene from Deep Blending dataset ([available here](https://repo-sam.inria.fr/fungraph/3d-gaussian-splatting/datasets/input/tandt_db.zip)). These scenes are used as cover and secret scenes in our experiments.
+Pretrained mipnerf360 3DGS models are [available here](https://drive.google.com/file/d/1iZY-sOrWToP5GDfUISVcccJDkHipwrDO/view?usp=drive_link).
 Please follow the dataset structure below to prepare the datasets and pretrained models in the source path location:
 
 ```
@@ -57,15 +66,14 @@ bash run_test.sh
 ```
 
 ## Acknowledgement
-We would like to thank the authors of [3DGS](https://github.com/graphdeco-inria/gaussian-splatting) and [CLIP](https://github.com/openai/CLIP) for their great work and generously providing source codes, which inspired our work and helped us a lot in the implementation.
+We would like to thank the authors of [3DGS](https://github.com/graphdeco-inria/gaussian-splatting), [Gaussian Grouping](https://github.com/lkeab/gaussian-grouping/tree/main) and [CLIP](https://github.com/openai/CLIP) for their great work and generously providing source codes, which inspired our work and helped us a lot in the implementation.
 
 
 ## Citation
 If you find our work helpful, please consider citing:
 ```bibtex
-@inproceedings{keyss2025,
+@article{keyss2025,
   title={All That Glitters Is Not Gold: Key-Secured 3D Secrets within 3D Gaussian Splatting},
-  author={Lin, Chenguo and Pan, Panwang and Yang, Bangbang and Li, Zeming and Mu, Yadong},
   author={Ren, Yan and Lu, Shilin and Kong, Adams Wai-Kin},
   journal={arXiv preprint arXiv:2503.07191},
   year={2025}

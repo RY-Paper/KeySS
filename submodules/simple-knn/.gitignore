@@ -1,0 +1,12 @@
+build/lib.linux-x86_64-cpython-38/simple_knn/_C.cpython-38-x86_64-linux-gnu.so
+build/temp.linux-x86_64-cpython-38/.ninja_deps
+build/temp.linux-x86_64-cpython-38/.ninja_log
+build/temp.linux-x86_64-cpython-38/build.ninja
+build/temp.linux-x86_64-cpython-38/ext.o
+build/temp.linux-x86_64-cpython-38/simple_knn.o
+build/temp.linux-x86_64-cpython-38/spatial.o
+simple_knn/_C.cpython-38-x86_64-linux-gnu.so
+simple_knn.egg-info/dependency_links.txt
+simple_knn.egg-info/PKG-INFO
+simple_knn.egg-info/SOURCES.txt
+simple_knn.egg-info/top_level.txt
