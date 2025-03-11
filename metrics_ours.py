@@ -52,7 +52,6 @@ def evaluate(model_paths):
             test_dir = Path(scene_dir)
 
             for method in os.listdir(test_dir):
-                # if method in ['bicycle']: #'testall_In_xyz_Out_scale_opacity_rotation_xyz_unlimit':
                 if method in ['abc']:
                     continue
                 if '.json' in method:

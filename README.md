@@ -67,7 +67,7 @@ If you find our work helpful, please consider citing:
   title={All That Glitters Is Not Gold: Key-Secured 3D Secrets within 3D Gaussian Splatting},
   author={Lin, Chenguo and Pan, Panwang and Yang, Bangbang and Li, Zeming and Mu, Yadong},
   author={Ren, Yan and Lu, Shilin and Kong, Adams Wai-Kin},
-  booktitle={Arvix},
+  journal={arXiv preprint arXiv:2503.07191},
   year={2025}
 }
 ```

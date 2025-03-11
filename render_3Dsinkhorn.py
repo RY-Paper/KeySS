@@ -33,8 +33,6 @@ from scipy.linalg import sqrtm
 from utils.general_utils import inverse_sigmoid
 import pandas as pd
 import ot
-cover_list = ['bonsai']
-secret_list = ['counter']
 
 
 def seed_torch(seed=42):
@@ -300,7 +298,7 @@ if __name__ == "__main__":
         "single_secret",
     ]
     cover_list = [
-        "bicycle",
+        "bonsai",
     ]
     
     # Example loop over methods and covers

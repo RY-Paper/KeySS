@@ -84,46 +84,6 @@ def seed_torch(seed=42):
 	torch.backends.cudnn.benchmark = False
 	torch.backends.cudnn.deterministic = True
  
-def render_set_fps(prompt, random_prompt, savepath, views, gaussians, pipeline, background, dec, device):
-    render_path = os.path.join(savepath, "renders")
-    makedirs(render_path, exist_ok=True)
-    gts_path = os.path.join(savepath, "gt")
-    makedirs(gts_path, exist_ok=True)
-
-    # Initialize timing variables
-    total_time = 0
-    frame_count = 0
-    
-    for idx, view in enumerate(tqdm(views, desc="Rendering progress")):
-        # Start timing
-        start_time = time.time()
-        
-        render_pkg = render_hide_prompt(prompt, dec, view, gaussians, pipeline, background)
-        torch.cuda.synchronize()  # Ensure GPU operations are completed
-        
-        # End timing
-        end_time = time.time()
-        frame_time = end_time - start_time
-        total_time += frame_time
-        frame_count += 1
-        
-        # Calculate FPS
-        current_fps = 1.0 / frame_time
-        average_fps = frame_count / total_time
-        
-        print(f"Frame {idx}: {current_fps:.2f} FPS (Average: {average_fps:.2f} FPS)")
-        
-        rendering = render_pkg["render_secret"]
-        gt = view.original_image[0:3, :, :]
-        torchvision.utils.save_image(rendering, os.path.join(render_path, '{0:05d}'.format(idx) + ".png"))
-        torchvision.utils.save_image(gt, os.path.join(gts_path, '{0:05d}'.format(idx) + ".png"))
-    
-    # Print final statistics
-    print(f"\nFinal Rendering Statistics:")
-    print(f"Total frames: {frame_count}")
-    print(f"Total time: {total_time:.2f} seconds")
-    print(f"Average FPS: {frame_count/total_time:.2f}")
-
 def render_set(prompt, random_prompt, savepath, views, gaussians, pipeline, background, dec,device):
     if "random" not in savepath:
         render_path = os.path.join(savepath, "renders")
@@ -153,16 +113,9 @@ def render_sets(prompt, random_prompt, dataset : ModelParams, iteration : int, p
     l = fealist_str #"scale,opacity,rotation,sh,xyz"
     fealist = l.split(',')
     print("fealist:", fealist)
-    # fealist = []
-    # for f in fea_all:
-    #     if f in load_path[19:]:
-    #         fealist.append(f)
-            
-    # fealist = ["scale","opacity","rotation","xyz"] #for mipnerf
             
     dec = decoder_all(fealist) #test all kinds of features
     dec._initialize_weights()
-    # dec.to(device)
     dec = torch.nn.DataParallel(dec.to("cuda"), device_ids=[0] ,output_device=0)
     dec.load_state_dict(torch.load(decpth))
     

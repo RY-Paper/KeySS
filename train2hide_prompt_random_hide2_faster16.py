@@ -100,7 +100,7 @@ def generate_randomprompt(tokenizer, text_encoder, batch_size=8):
 
 def training(prompt, prompt2, random_prompts, dataset, opt, pipe, testing_iterations, saving_iterations, checkpoint_iterations,
              debug_from, use_wandb, save_path: str,
-             allply:str, hideply:str, secret2ply:str, device, fealist, w_cover, w_secret, w_secret2, w_random,w_scale,
+             allply:str, hideply:str, secret2ply:str, device, fealist, w_cover, w_secret, w_secret2, w_random,
              source_path_secret=None, source_path_secret2=None):
     first_iter = 0
     dataset.source_path_secret = source_path_secret
@@ -242,7 +242,7 @@ def training(prompt, prompt2, random_prompts, dataset, opt, pipe, testing_iterat
             # Calculate losses
             loss, loss_cover, loss_secret, loss_random, loss_secret2  = compute_losses(render_pkg, gt_image, gt_secret, gt_secret2, 
                                 scales_secret_gt, scales_secret2_gt,
-                                opt, w_cover, w_secret, w_secret2, w_random, w_scale)
+                                opt, w_cover, w_secret, w_secret2, w_random)
             del gt_image, gt_secret, gt_secret2     
             torch.cuda.empty_cache()
                
@@ -310,7 +310,7 @@ def training(prompt, prompt2, random_prompts, dataset, opt, pipe, testing_iterat
             torch.cuda.empty_cache()
             raise e
 def compute_losses(render_pkg, gt_image, gt_secret, gt_secret2, scales_secret_gt, scales_secret2_gt,
-                  opt, w_cover, w_secret, w_secret2, w_random, w_scale):
+                  opt, w_cover, w_secret, w_secret2, w_random):
     """Compute all losses in a memory efficient way"""
     
     Ll1 = l1_loss(render_pkg["render"], gt_image)
@@ -463,7 +463,7 @@ if __name__ == "__main__":
              args.save_iterations, args.checkpoint_iterations,
              args.debug_from, args.use_wandb,
              args.save_path,
-             args.all_path, args.hide_path, args.secret2_path, device, fealist, args.w_cover, args.w_secret,args.w_secret2,args.w_random,args.w_scale,
+             args.all_path, args.hide_path, args.secret2_path, device, fealist, args.w_cover, args.w_secret,args.w_secret2,args.w_random,
              args.source_path_secret, args.source_path_secret2)
 
     # All done

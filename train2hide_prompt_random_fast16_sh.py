@@ -411,6 +411,7 @@ if __name__ == "__main__":
     parser.add_argument("--w3", type=float, default=0.01, help='loss3-weight')
     parser.add_argument("--source_path_secret", type=str, default=None, help="Path to load secret dataset")
     parser.add_argument("--batchsize", type=int, default=200000, help="batchsize")
+    parser.add_argument("--prompt", type=str, default="NobodysGonnaKnow", help="prompt")
 
     args = parser.parse_args(sys.argv[1:])
     args.save_iterations.append(args.iterations)
@@ -431,7 +432,7 @@ if __name__ == "__main__":
     
     # Generate prompt with frozen CLIP
     with torch.inference_mode():  # Even stronger than no_grad
-        prompt = generate_prompt("NobodysGonnaKnow") #change to nobodys gonna know
+        prompt = generate_prompt(args.prompt) #change to nobodys gonna know
         prompt = prompt.to(device)
     
         # Ensure prompt has no gradients

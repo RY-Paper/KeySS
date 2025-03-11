@@ -60,3 +60,5 @@ screenshots/
 .Trashes
 ehthumbs.db
 Thumbs.db
+sinkhorn_distances_by_method_and_cover_sinkhorn_check.csv
+sinkhorn_distances_by_method_and_cover_sinkhorn_check.xlsx
