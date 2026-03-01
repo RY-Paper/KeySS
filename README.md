@@ -1,4 +1,4 @@
-# All That Glitters Is Not Gold: Key-Secured 3D Secrets within 3D Gaussian Splatting
+# [ICLR 2026] All That Glitters Is Not Gold: Key-Secured 3D Secrets within 3D Gaussian Splatting
 
 [![arXiv](https://img.shields.io/badge/arXiv-KeySS-green.svg?style=plastic)](https://arxiv.org/abs/2503.07191) [![HuggingFace](https://img.shields.io/badge/HuggingFace-PretrainedMipnerf360Models-blue.svg?style=plastic)](https://huggingface.co/jojojohn/mipnerf360_pretrained) <br>
 
@@ -19,11 +19,11 @@ Extensive experiments demonstrate that our method achieves state-of-the-art perf
 ---
 
 ## Contents
-  - [Environment Installation](#setup)
+  - [Environment Installation](#environment-installation)
   - [Dataset and Pretrained Model](#dataset-and-pretrained-model)
   - [Running](#running)
   - [Evaluation](#evaluation)
-  - [Acknowledgement](#evaluation)
+  - [Acknowledgement](#acknowledgement)
   - [Citation](#citation)
 
 <br>
