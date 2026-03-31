@@ -1,6 +1,8 @@
 # [ICLR 2026] All That Glitters Is Not Gold: Key-Secured 3D Secrets within 3D Gaussian Splatting
 
-[![arXiv](https://img.shields.io/badge/arXiv-KeySS-green.svg?style=plastic)](https://arxiv.org/abs/2503.07191) [![HuggingFace](https://img.shields.io/badge/HuggingFace-PretrainedMipnerf360Models-blue.svg?style=plastic)](https://huggingface.co/jojojohn/mipnerf360_pretrained) <br>
+[![arXiv](https://img.shields.io/badge/arXiv-KeySS-green.svg?style=plastic)](https://arxiv.org/abs/2503.07191) 
+[![HuggingFace](https://img.shields.io/badge/HuggingFace-PretrainedMipnerf360Models-blue.svg?style=plastic)](https://huggingface.co/jojojohn/mipnerf360_pretrained) 
+[![ICLR 2026](https://img.shields.io/badge/ICLR-2026-red.svg?style=plastic)](https://iclr.cc/virtual/2026/poster/10010839) <br>
 
 This repository contains the official authors implementation associated with the paper ["All That Glitters Is Not Gold: Key-Secured 3D Secrets within 3D Gaussian Splatting."](https://arxiv.org/abs/2503.07191)
 
