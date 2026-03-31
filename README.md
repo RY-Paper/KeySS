@@ -106,11 +106,11 @@ We would like to thank the authors of [3DGS](https://github.com/graphdeco-inria/
 ## Citation
 If you find our work helpful, please consider citing:
 ```bibtex
-@article{keyss2025,
+@inproceedings{ren2026keyss,
   title={All That Glitters Is Not Gold: Key-Secured 3D Secrets within 3D Gaussian Splatting},
-  author={Ren, Yan and Lu, Shilin and Kong, Adams Wai-Kin},
-  journal={arXiv preprint arXiv:2503.07191},
-  year={2025}
+  author={Ren, Yan and others},
+  booktitle={International Conference on Learning Representations (ICLR)},
+  year={2026}
 }
 ```
 
